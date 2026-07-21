@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f7f7;
+  color: #222;
+}
+
+.site-header {
+  padding: 2rem;
+  background: #00274C;
+  color: white;
+}
+
+.site-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.site-header p {
+  margin: 0;
+  max-width: 60rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  display: block;
+  width: 100%;
+  min-height: 140px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background: white;
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  outline: 3px solid #FFCB05;
+}
+
+.card-title {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.category {
+  display: inline-block;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  padding: 2rem;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.modal[aria-hidden="false"] {
+  display: block;
+}
+
+.modal-content {
+  background: white;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+  float: right;
+  border: 0;
+  border-radius: 8px;
+  background: #00274C;
+  color: white;
+  padding: 0.6rem 0.85rem;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  background: #004b8d;
+  outline: 3px solid #FFCB05;
+}
+
+.tool-label {
+  margin-top: -0.5rem;
+  color: #555;
+  font-weight: 600;
+}
+
+.demo-media {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  margin: 1rem 0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #f1f1f1;
+}

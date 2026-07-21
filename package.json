@@ -1,0 +1,18 @@
+{
+  "name": "interactive-gallery",
+  "version": "1.0.0",
+  "description": "A gallery of H5P and DesignPLUS interactives.",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+"build-ghpages": "npx @11ty/eleventy"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
