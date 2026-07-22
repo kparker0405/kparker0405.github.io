@@ -9,8 +9,12 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
-<body>
 
+<body>
+  <header>
+    <p style="font-size:8px">Made by Kat Parker, a learning experience designer for Ross School of
+      Business. </p>
+  </header>
   {% if showNav !== false %}
   <nav class="topnav" aria-label="Main navigation">
     <a href="/" {% if page.url=="/" %}class="active" {% endif %}>Home</a>
@@ -24,6 +28,6 @@
 
   {{ content | safe }}
 
-</body>
+
 
 </html>

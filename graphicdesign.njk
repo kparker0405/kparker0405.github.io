@@ -1,16 +1,94 @@
 ---
-title: What're my options?
+title: Grapic Design
 layout: base.njk
 permalink: graphicdesign.html
 ---
 
 <header class="site-header">
 
-    <h1>What're my options?</h1>
+    <h1>Graphic Design Options</h1>
 
-    <p>Kat's demo site showcasing possible interactions for courses at ODE.</p>
+    <p>These are options for displaying visual information in Canvas.</p>
 </header>
 
-<main>
-    <h2>Here's the graphics page!</h2>
+<main class="gallery" aria-label="Interactive examples">
+
+    <button class="card" type="button" data-title="Slide Redesign" \*data-demo="/assets/demos/accordion-demo.mp4" \*
+        data-description="TO COME" data-use="TO COME">
+        <span class="card-title">Slide Redesign</span>
+    </button>
+
+
+
+</main>
+
+<div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="close-button" id="closeModal" type="button">Close</button>
+
+        <h2 id="modal-title"></h2>
+        <p class="tool-label" id="modal-tool"></p>
+
+        <video id="modal-demo" class="demo-media" controls muted loop playsinline>
+            Your browser does not support the video element.
+        </video>
+
+        <h3>Details</h3>
+        <p id="modal-description"></p>
+
+        <h3>Good for</h3>
+        <p id="modal-use"></p>
+
+    </div>
+
+</div>
+
+<script>
+    const cards = document.querySelectorAll(".card");
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("closeModal");
+
+    const modalTitle = document.getElementById("modal-title");
+    const modalTool = document.getElementById("modal-tool");
+    const modalDemo = document.getElementById("modal-demo");
+    const modalDescription = document.getElementById("modal-description");
+    const modalUse = document.getElementById("modal-use");
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+            modalTitle.textContent = card.dataset.title;
+            modalTool.textContent = card.dataset.tool;
+            modalDescription.textContent = card.dataset.description;
+            modalUse.textContent = card.dataset.use;
+
+            modalDemo.src = card.dataset.demo;
+            modalDemo.load();
+            modalDemo.play();
+
+            modal.setAttribute("aria-hidden", "false");
+            closeModal.focus();
+        });
+    });
+
+    function hideModal() {
+        modal.setAttribute("aria-hidden", "true");
+        modalDemo.pause();
+        modalDemo.removeAttribute("src");
+        modalDemo.load();
+    }
+
+    closeModal.addEventListener("click", hideModal);
+
+    modal.addEventListener("click", event => {
+        if (event.target === modal) {
+            hideModal();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && modal.getAttribute("aria-hidden") === "false") {
+            hideModal();
+        }
+    });
+</script>
 </main>

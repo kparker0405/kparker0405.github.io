@@ -9,8 +9,15 @@ body {
   color: #222;
 }
 
+header {
+  background-color: #00274C;
+  text-align: left;
+  padding: 4px;
+  color: white;
+}
+
 .site-header {
-  padding: 2rem;
+  padding: 20px 40px;
   background: #00274C;
   color: white;
 }
@@ -24,6 +31,8 @@ body {
   margin: 0;
   max-width: 60rem;
 }
+
+
 
 .gallery {
   display: grid;
@@ -46,7 +55,7 @@ body {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .topnav {
-  background-color: #333;
+  background-color: #00274C;
   overflow: hidden;
 }
 
@@ -68,8 +77,8 @@ body {
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #FFCB05;
+  color: black;
 }
 .card:hover,
 .card:focus {
