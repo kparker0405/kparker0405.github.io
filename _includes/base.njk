@@ -10,7 +10,20 @@
 </head>
 
 <body>
+
+  {% if showNav !== false %}
+  <nav class="topnav" aria-label="Main navigation">
+    <a href="/" {% if page.url=="/" %}class="active" {% endif %}>Home</a>
+    <a href="/interactivegallery.html" {% if page.url=="/interactivegallery.html" %}class="active" {% endif
+      %}>Interactive Gallery</a>
+    <a href="/graphicdesign.html" {% if page.url=="/graphicdesign.html" %}class="active" {% endif %}>Graphic Design</a>
+    <a href="/videos.html" {% if page.url=="/videos.html" %}class="active" {% endif %}>Videos</a>
+    <a href="/canvasdesign.html" {% if page.url=="/canvasdesign.html" %}class="active" {% endif %}>Canvas Design</a>
+  </nav>
+  {% endif %}
+
   {{ content | safe }}
+
 </body>
 
 </html>
